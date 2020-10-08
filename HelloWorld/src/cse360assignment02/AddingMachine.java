@@ -1,28 +1,54 @@
 package cse360assignment02;
+/**
+ * An adding machine with various methods
+ * @author Frankincense Ramesh
+ *
+ */
 
+	
 public class AddingMachine {
-  //private int total;
-  
+	
+  private int total;
+  private String str;
   public AddingMachine () {
-   //total = 0;  // not needed - included for clarity
+   total = 0;  // not needed - included for clarity
   }
-  
-  public int getTotal () {/**returns the current total*/
-   return 0;
+ /**
+  * Returns the current total
+  * @return the total 
+  */
+  public int getTotal () {
+   return total;
   }
-  
-  public void add (int value) {/**the add method adds the parameter to the total variable*/
-  
+  /**
+   * adds the parameter to the total variable
+   * @param value 
+   */
+  public void add (int value) {
+	  total = total + value;
+	  str += " + "+value;
+	  
   }
+/**
+ * subtracts the parameter from the total variable
+ * @param value
+ */
+  public void subtract (int value) {
+	  total = total - value;
+	  str += " - "+value;
+  }
+/**
+ * history of the transactions returned to this method
+ */
+  public String toString () {
+    return str;
+  }
+  /**
+   * clears AddingMachine
+   */
 
-  public void subtract (int value) {/**the subtract method subtracts the parameter from the total variable*/
-  
+  public void clear() {
+	  total = 0;
   }
-
-  public String toString () {/**history of the transactions returned to this method*/
-    return "";
-  }
-
-  public void clear() {/**clears AddingMachine*/
-  }
+ 
 }
